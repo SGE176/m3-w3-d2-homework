@@ -1,13 +1,17 @@
-
+@import "colors";
 
 //Global
 * {
-    color: ;
+    color: $primary-text ;
     font-size: 1.2rem;
 }
-
+@mixin p-position($property) {
+    display:flex;
+    align-items: $property;
+    justify-content: $property;
+}
 .container {
-    background-color: ;
+    background-color: $primary-bg;
     border: 1px solid #000;
     display: flex;
     height: 500px;
@@ -17,21 +21,23 @@
     width: 50%;
 
     .left {
-        background-color: ;
+        background-color: $left-bg;
         height: 100%;
         width: 69%;
         position: relative;
+        @include p-position(center)
     }
 
     .right {
-        background-color: ;
+        background-color: $right-bg;
         height: 100%;
         position: relative;
         width: 29%;
+        @include p-position(center);
 
         .button {
-            background-color: ;
-            color: ;
+            background-color: $btn-bg;
+            color: $left-bg;
             border: 0;
             border-radius: 10px;
             cursor: pointer;
